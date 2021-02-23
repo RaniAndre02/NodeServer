@@ -1,4 +1,5 @@
 var http = require("http");
+var fs = reqeuire ("fs");
 
 var express = require("express");
 var apiServer = express();
@@ -10,10 +11,14 @@ apiServer.listen(port, () => {
 });
 
 apiServer.get("/mensa", (req, res) =>{
-    console.log("ho ricevuto una get su nome");
-   res.send("<h1>Sei in una risorsa che si chiama mensa</h1> <p>questo è un messaggio, ti trovi in una risorsa del server</p>");
+    fs.readFile('login.html', function (err, data){
+        res.writeHead(200,{"Content-Type":"text/html"});
+        res.write(data);
+        res.end();
+    });
    
 });
+
 
 apiServer.get("/", function(req, res){
     res.send("<h1>Sei nella home page del server della mensa</h1> <p>questo è un messaggio, ti trovi nella pagina iniziale</p> <h2>"
