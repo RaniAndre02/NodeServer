@@ -16,6 +16,7 @@ apiServer.get("/mensa", (req, res) =>{
 });
 
 apiServer.get("/", function(req, res){
-    res.send("<h1>Sei nella home page del server della mensa</h1> <p>questo è un messaggio, ti trovi nella pagina iniziale</p>");
+    res.send("<h1>Sei nella home page del server della mensa</h1> <p>questo è un messaggio, ti trovi nella pagina iniziale</p> <h2>"
+    +"titolo aggiunto dopo </h2>");
     
 })
