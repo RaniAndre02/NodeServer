@@ -12,8 +12,10 @@ apiServer.listen(port, () => {
 apiServer.get("/mensa", (req, res) =>{
     console.log("ho ricevuto una get su nome");
    res.send("<h1>Sei in una risorsa che si chiama mensa</h1>");
+   res.send("<p>questo è un messaggio, ti trovi in una risorsa del server</p>");
 });
 
 apiServer.get("/", function(req, res){
     res.send("<h1>Sei nella home page del server della mensa</h1>");
+    res.send("<p>questo è un messaggio, ti trovi nella pagina iniziale</p>");
 })
