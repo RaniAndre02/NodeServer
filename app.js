@@ -1,5 +1,5 @@
 var http = require("http");
-var fs = reqeuire ("fs");
+var fs = require ("fs");
 
 var express = require("express");
 var apiServer = express();
@@ -10,7 +10,7 @@ apiServer.listen(port, () => {
     console.log("server running on port ", port);
 });
 
-apiServer.get("/mensa", (req, res) =>{
+apiServer.get("/login", (req, res) =>{
     fs.readFile('login.html', function (err, data){
         res.writeHead(200,{"Content-Type":"text/html"});
         res.write(data);
